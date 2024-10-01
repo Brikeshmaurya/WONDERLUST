@@ -1,0 +1,63 @@
+<%- layout("layout/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="custom-container">
+                <h3 class="custom-heading">SIGN-UP <i class="fa-solid fa-user-plus"></i></h3>
+                <form action="/signup" method="post" novalidate class="needs-validation" id="passwordForm">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="username" class="custom-label">First Name</label>
+                            <div class="mb-3">
+                                <input type="text" name="fname" id="fname" class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    First Name required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="username" class="custom-label">Last Name</label>
+                            <div class="mb-3">
+                                <input type="text" name="lname" id="fname" class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    LastName required
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <label for="username" class="custom-label">Date-of-birth</label>
+                    <div class="mb-3">
+                        <input type="date" name="date" id="date" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Date should be valid
+                        </div>
+                    </div>
+                    <label for="username" class="custom-label">Username</label>
+                    <div class="mb-3">
+                        <input type="text" name="username" id="username" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Username should be valid
+                        </div>
+                    </div>
+
+
+                    <label for="email" class="custom-label">Email</label>
+                    <div class="mb-3">
+                        <input type="text" name="email" id="email" class="custom-input" required>
+                        <span id="emailError" class="error text-danger"></span>
+                    </div>
+
+                    <label for="password" class="custom-label">Password</label>
+                    <div class="mb-3">
+                        <input type="password" name="password" id="password" class="custom-input" required>
+                        <span id="passwordError" class="error text-danger"></span>
+                    </div>
+
+                    <button class="all-button" role="button">SIGN-IN</button>
+                </form>
+            </div>
+        </div>
+
+    </body>

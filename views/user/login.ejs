@@ -1,0 +1,30 @@
+<%- layout("layout/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="custom-container">
+                <h3 class="custom-heading">LOGIN <i class="fa-solid fa-user-plus"></i></h3>
+                <form action="/login" method="post" class="needs-validation" novalidate>
+                    <label for="username" class="custom-label">Username</label>
+                    <div class="mb-3">
+                        <input type="text" name="username" id="username" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Username should be valid
+                        </div>
+                    </div>
+
+
+                    <label for="password" class="custom-label">Password</label>
+                    <div class="mb-3">
+                        <input type="password" name="password" id="password" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Password should be valid
+                        </div>
+                    </div>
+
+                    <button class="all-button" role="button">LOG-IN</button>
+                </form>
+            </div>
+        </div>
+
+    </body>

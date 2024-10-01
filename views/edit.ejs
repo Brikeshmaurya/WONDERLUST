@@ -1,0 +1,91 @@
+<%- layout("layout/boilerplate") %>
+
+    <body>
+        <div class="row">
+            <div class="custom-container">
+                <h3 class="custom-heading ">Edit List <i class="fa-solid fa-layer-group"></i></h3>
+
+                <form action="/listings/<%=listing.id%>?_method=PUT" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                    <label for="title" class="custom-label">Title</label>
+                    <div class="mb-3">
+                        <input type="text" value="<%=listing.title%>" name="listing[title]" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Title should be valid
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="discription" class="custom-label">Discription</label>
+                        <textarea type="text" name="listing[description]" class="custom-input" required><%=listing.description%>  </textarea>
+                        <div class="invalid-feedback">
+                            Discription is Required
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="custom-label">Original Image</label><br>
+                        <img src="<%=originalUrl%>" alt="Older Image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="image">Upload New Image</label>
+                        <input type="file" name="listing[image]" class="custom-input">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <select name="listing[category]" class="form-select custom-label">
+                          <option selected >Select New Category</option>
+                          <option value="Trending">Trending</option>
+                          <option value="Rooms">Rooms</option>
+                          <option value="Iconic cities">Iconic Cities</option>
+                          <option value="Snow">Snow</option>
+                          <option value="Mountains">Mountains</option>
+                          <option value="Castles">Castles</option>
+                          <option value="Boats">Boats</option>
+                          <option value="Farms">Farms</option>
+                          <option value="Winter">Winter</option>
+                          <option value="Camping">Camping</option>
+                          <option value="Arctic">Arctic</option>
+                        </select>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="number" class="custom-label">Number</label>
+                                <input type="number" placeholder="1599" name=" listing[price] " class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    Price should be valid
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label for="location" class="custom-label">Location</label>
+                                <input type="text" value="<%=listing.location%>" name="listing[location]" class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    Location should be valid
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="country" class="custom-label">Country</label>
+                        <input type="text" value="<%=listing.country%>" name=" listing[country] " class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Country name should be valid
+                        </div>
+                    </div>
+                    <button class="all-button" role="button">EDIT</button>
+            </div>
+            </form>
+
+        </div>
+    </body>

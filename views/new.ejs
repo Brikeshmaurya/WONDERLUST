@@ -1,0 +1,82 @@
+<%- layout("layout/boilerplate") %>
+
+    <body>
+
+        <div class="row">
+            <div class="custom-container">
+                <h3 class="custom-heading">Add New List <i class="fa-solid fa-person-circle-plus"></i></h3>
+                <form action="/listings" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="title" class="custom-label">Title</label>
+                        <input type="text" placeholder="Rustic cabin by Lake" name="listing[title]" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Title should be valid
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="custom-label">Description</label>
+                        <textarea type="text" name="listing[description]" class="custom-input" required></textarea>
+                        <div class="invalid-feedback">
+                            Desciption Require
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="custom-label">Upload Image</label>
+                        <input type="file" placeholder="http://picture.png/jpg/jpeg" name="listing[image]" class="custom-input">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <select name="listing[category]" class="form-select custom-label">
+                          <option selected >Select Category</option>
+                          <option value="Trending">Trending</option>
+                          <option value="Rooms">Rooms</option>
+                          <option value="Iconic cities">Iconic Cities</option>
+                          <option value="Snow">Snow</option>
+                          <option value="Mountains">Mountains</option>
+                          <option value="Castles">Castles</option>
+                          <option value="Boats">Boats</option>
+                          <option value="Farms">Farms</option>
+                          <option value="Winter">Winter</option>
+                          <option value="Camping">Camping</option>
+                          <option value="Arctic">Arctic</option>
+                        </select>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="price" class="custom-label">Price</label>
+                                <input type="number" placeholder="1200" name="listing[price]" required class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    Price should be valid
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label for="location" class="custom-label">Location</label>
+                                <input type="text" placeholder="IndiraNagar Lucknow" name="listing[location]" class="custom-input" required>
+                                <div class="invalid-feedback">
+                                    Location should be valid
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="country" class="custom-label">Country</label>
+                        <input type="text" placeholder="India" name="listing[country]" class="custom-input" required>
+                        <div class="invalid-feedback">
+                            Country name should be valid
+                        </div>
+                    </div>
+                    <button class="all-button" role="button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>

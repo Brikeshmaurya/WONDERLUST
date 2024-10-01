@@ -1,0 +1,145 @@
+<!-- <nav class="navbar  navbar-expand-md bg-white border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass "></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="/listings"><b style="color: #fe424d;">Explore-Aibnb</b></a>
+                </li>
+            </ul>
+
+            <div class="navbar-nav search ms-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 inp-search" type="search" placeholder="Search destination">
+                    <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                </form>
+            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/listings/new">Add New List</a>
+                </li>
+                <% ///if(!currUser){%>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/signup">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <% //}%>
+                        <% //if(currUser){%>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                            <% //}%>
+            </ul>
+
+        </div>
+    </div>
+</nav> -->
+
+<!-- Original Navbar -->
+<style>
+    .custom-dropdown {
+        transform: translateX(-100px);
+    }
+</style>
+<!-- Original Navbar -->
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings"> <i class="fa-brands fa-airbnb fa-compass"></i></a>
+
+        <!-- This is the search bar for screen sizes above 768px -->
+        <div class="collapse navbar-collapse search-above-768" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" href="/listings"><b style="color: #fe424d;">Explore-Airbnb</b></a>
+                </li>
+            </ul>
+
+            <div class="navbar-nav ms-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 inp-search" type="search" placeholder="Search destination">
+                    <button class="btn btn-search" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>Search
+                    </button>
+                </form>
+            </div>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+
+                    <a class="nav-link" href="/listings/new"><b>Airbnb your Home</b></a>
+                </li>
+                <% if (!currUser) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">
+                            SIGNUP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">LOGIN</a>
+                    </li>
+                    <% } else { %>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-gear fs-5"></i>
+                            </a>
+                            <div class="dropdown-menu custom-dropdown">
+                                <a class="dropdown-item" href="/logout"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Log-out</a>
+
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item" href="#https://www.airbnb.co.in/help"><i class="fa-brands fa-mintbit"></i>&nbsp;&nbsp;help center</a>
+                            </div>
+                        </li>
+
+                        <% } %>
+            </ul>
+        </div>
+
+        <!-- This is the search bar for screen sizes below 768px -->
+        <div class="navbar-nav search d-flex ms-auto">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 inp-search" type="search" placeholder="Search destination">
+                <button class="btn btn-search" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>Search
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- New Bottom Nav for Mobile View -->
+<div id="bottom-nav" class="bottom-nav-hidden">
+
+    <a href="/listings"><i class="fa-solid fa-magnifying-glass fs-5"></i><br>Explore</a>
+    <% if (!currUser) { %>
+
+        <a href="/signup"><i class="fa-solid fa-user-plus fs-5"></i><br>Signup</a>
+        <a href="/login"><i class="fa-regular fa-user fs-5"></i><br>Login</a>
+        <% } else { %>
+
+            <a href="/logout"><i class="fa-regular fa-user fs-5"></i><br>LOGOUT</a>
+            <% } %>
+</div>
+
+<script>
+    let lastScrollTop = 0;
+    let bottomNav = document.getElementById("bottom-nav");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down, hide the bottom nav with transition
+            bottomNav.classList.add("bottom-nav-hidden");
+        } else {
+            // Scrolling up, show the bottom nav with transition
+            bottomNav.classList.remove("bottom-nav-hidden");
+        }
+
+        lastScrollTop = scrollTop;
+    });
+</script>
