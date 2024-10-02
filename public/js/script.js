@@ -13,29 +13,29 @@
     })
 })();
 
-
-// Password validation
+// Password and Email validation
 document.getElementById('passwordForm').addEventListener('submit', function(e) {
+    // Password validation
     const password = document.getElementById('password').value;
-    const errorElement = document.getElementById('passwordError');
+    const passwordErrorElement = document.getElementById('passwordError');
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if (!passwordRegex.test(password)) {
         e.preventDefault();
-        errorElement.textContent = 'Password must be at least 8 characters long, contain at least one number, and one uppercase letter.';
+        passwordErrorElement.textContent = 'Password must be at least 8 characters long, contain at least one number, and one uppercase letter.';
     } else {
-        errorElement.textContent = '';
+        passwordErrorElement.textContent = '';
     }
 
-
+    // Email validation
     const email = document.getElementById('email').value;
-    const errorElement2 = document.getElementById('emailError');
+    const emailErrorElement = document.getElementById('emailError');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
         e.preventDefault();
-        errorElement2.textContent = 'Please enter a valid email address.';
+        emailErrorElement.textContent = 'Please enter a valid email address.';
     } else {
-        errorElement.textContent = '';
+        emailErrorElement.textContent = '';
     }
 });
