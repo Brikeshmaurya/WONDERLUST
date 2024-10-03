@@ -111,7 +111,20 @@
  .tax-info {
      display: none;
  }
- /* For screen widths below 768px */
+ /* Media queries for responsiveness */
+ 
+ @media (min-width: 768px) {
+     #filters {
+         justify-content: space-between;
+         padding: 1.5rem 0;
+     }
+     .filter {
+         margin-right: 1.5rem;
+     }
+     .tax-toggle {
+         margin-left: 2rem;
+     }
+ }
  
  @media (max-width: 768px) {
      #filters {
@@ -127,7 +140,6 @@
      }
      .filter i {
          font-size: 1.3rem;
-         /* Slightly increase icon size */
      }
      .filter p {
          font-size: 0.8rem;
@@ -138,6 +150,33 @@
      #filters {
          -ms-overflow-style: none;
          scrollbar-width: none;
+     }
+     .tax-toggle {
+         margin-left: 2rem;
+     }
+ }
+ 
+ @media (max-width: 320px) {
+     #filters {
+         padding: 0.5rem 0;
+     }
+     .filter {
+         min-width: 4.5rem;
+         margin-right: 0.5rem;
+     }
+     .filter i {
+         font-size: 1.1rem;
+     }
+     .filter p {
+         font-size: 0.7rem;
+     }
+     .tax-toggle {
+         margin-left: 1rem;
+         padding: 5px 10px;
+         height: 2.5rem;
+     }
+     .tax-toggle label {
+         font-size: 0.7rem;
      }
  }
  /* filter */
@@ -274,12 +313,15 @@
          font-size: 16px;
      }
      .show-btn {
-         flex-direction: row;
+         flex-direction: column;
      }
      .show-btn a,
      .show-btn button {
          width: 100%;
          margin-bottom: 10px;
+     }
+     .card.show-card {
+         padding: 10px;
      }
  }
  
@@ -290,6 +332,22 @@
      .listing-desc,
      .listing-price {
          font-size: 14px;
+     }
+     .show-img {
+         height: 200px;
+     }
+     .card.show-card {
+         margin: 0 auto;
+         padding: 8px;
+     }
+     .show-btn {
+         flex-direction: column;
+         justify-content: center;
+     }
+     .show-btn a,
+     .show-btn button {
+         width: 100%;
+         margin-bottom: 10px;
      }
  }
  /* =======================Show ejs page ======================= */
@@ -347,6 +405,10 @@
      outline: none !important;
      border: 2px solid #fe424d !important;
      box-shadow: none !important;
+ }
+ 
+ .custom-dropdown {
+     transform: translateX(-100px)!important;
  }
  
  @media (max-width: 768px) {

@@ -96,7 +96,7 @@ const sampleListings = [{
     },
     {
         title: "Ski-In/Ski-Out Chalet",
-        description: "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
+        description: "  Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
         image: {
             filename: "listingimage",
             url: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
