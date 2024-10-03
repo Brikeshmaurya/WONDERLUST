@@ -119,13 +119,24 @@
  @media (min-width: 768px) {
      #filters {
          display: flex;
-         flex-wrap: wrap;
+         flex-wrap: nowrap;
          align-items: center;
-         overflow: hidden;
-         justify-content: flex-start;
+         overflow-x: auto;
+         padding: 1rem 0;
+         scrollbar-width: none;
+     }
+     #filters::-webkit-scrollbar {
+         display: none;
+     }
+     .filter {
+         flex-shrink: 0;
+         margin-right: 1rem;
+         opacity: 0.8;
+         min-width: 6rem;
      }
      .tax-toggle {
          margin-left: auto;
+         flex-shrink: 0;
      }
  }
  
